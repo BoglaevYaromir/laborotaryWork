@@ -1,0 +1,40 @@
+public class laboratoryWork{
+    public static void main(String args[]){
+        int [] z=new int[11];
+        for(int i=0;i<11;i++){
+            z[i]=(i+1)*2-1;
+        }
+        double [] x=new double[12];
+        double min=-10.0;
+        double max=11.0;
+        for(int i=0;i<12;i++) {
+            x[i] = min+(max-min)*Math.random();
+        }
+        double [][] z1=new double[11][12];
+        for(int i=0;i<11;i++){
+            for(int j=0;j<12;j++){
+                z1[i][j]=calculateElement(z[i],x[j]);
+            }
+        }
+        print(z1);
+    }
+    public static double calculateElement(int z, double x){
+        if(z==21) {
+            return Math.cos(Math.pow(x*0.5, 1/3d));
+        }
+        else if(z==3 || z==5 || z==7 || z==13 || z==15){
+            return Math.cos(Math.cos(Math.tan(x)));
+        }
+        else{
+            return (Math.pow(2*Math.sin(Math.pow(2/3d*(1/3d-x),x)),2))/(Math.PI-((Math.log(Math.pow(Math.tan(x),2))+Math.PI)/(Math.pow(Math.pow(x/(0.5+x),3),1/3d))));
+        }
+    }
+    public static void print(double [][] z){
+        for (int i=0;i<11;i++) {
+            for (int j=0;j<12;j++) {
+                System.out.printf("%.4f ", z[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
