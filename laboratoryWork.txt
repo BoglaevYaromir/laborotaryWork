@@ -32,7 +32,11 @@ public class laboratoryWork{
     public static void print(double [][] z){
         for (int i=0;i<11;i++) {
             for (int j=0;j<12;j++) {
-                System.out.printf("%.4f ", z[i][j]);
+                if (Double.isNaN(z[i][j])) {
+                    System.out.printf("%-10s", z[i][j]);
+                } else {
+                    System.out.printf("%-10.4f", z[i][j]);
+                }
             }
             System.out.println();
         }
