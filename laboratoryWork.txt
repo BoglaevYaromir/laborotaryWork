@@ -16,23 +16,23 @@ public class laboratoryWork{
                 z1[i][j]=calculateElement(z[i],x[j]);
             }
         }
-        print(z1);
+        printMatrix(z1);
     }
-    public static double calculateElement(int z, double x){
-        if(z==21) {
-            return Math.cos(Math.pow(x*0.5, 1/3d));
+    public static double calculateElement(int zValue, double xValue){
+        if(zValue==21) {
+            return Math.cos(Math.pow(xValue*0.5, 1/3d));
         }
-        else if(z==3 || z==5 || z==7 || z==13 || z==15){
-            return Math.cos(Math.cos(Math.tan(x)));
+        else if(zValue==3 || zValue==5 || zValue==7 || zValue==13 || zValue==15){
+            return Math.cos(Math.cos(Math.tan(xValue)));
         }
         else{
-            return (Math.pow(2*Math.sin(Math.pow(2/3d*(1/3d-x),x)),2))/(Math.PI-((Math.log(Math.pow(Math.tan(x),2))+Math.PI)/(Math.pow(Math.pow(x/(0.5+x),3),1/3d))));
+            return (Math.pow(2*Math.sin(Math.pow(2/3d*(1/3d-xValue),xValue)),2))/(Math.PI-((Math.log(Math.pow(Math.tan(xValue),2))+Math.PI)/(Math.pow(Math.pow(xValue/(0.5+xValue),3),1/3d))));
         }
     }
-    public static void print(double [][] z){
+    public static void printMatrix(double [][] matrix){
         for (int i=0;i<11;i++) {
             for (int j=0;j<12;j++) {
-                System.out.printf("%-10.4f", z[i][j]);
+                System.out.printf("%-10.4f", matrix[i][j]);
             }
             System.out.println();
         }
